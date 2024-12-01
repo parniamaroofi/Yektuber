@@ -1,0 +1,134 @@
+@use "variables" as *;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font setup */
+@font-face {
+  font-family: IRANSans;
+  src: url("@/assets/fonts/IRANSans(FaNum).ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("@/assets/fonts/Vazir.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("@/assets/fonts/Vazir-Medium.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("@/assets/fonts/Vazir-Bold.ttf");
+  font-weight: bold;
+}
+
+body,
+html {
+  margin: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+* {
+  font-family: Vazir, IRANSans;
+
+  @media only screen and (min-width: 1300px) {
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #ebebeb;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #9c9c9c;
+    }
+  }
+}
+
+.v-btn {
+  letter-spacing: 0 !important;
+  box-shadow: none !important;
+}
+
+// ---  Fade transition ---
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// --- Bounce transition ---
+.bounce-enter-active {
+  animation: bounce-in 0.3s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.3s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Slide up
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.25s ease-in-out;
+}
+
+.slide-up-enter-from {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+
+// Input style
+.v-field {
+  border-radius: 16px !important;
+  font-family: Vazir;
+  input {
+    font-family: Vazir;
+  }
+}
+.v-field__outline:not(.text-primary) {
+  .v-field__outline__start,
+  .v-field__outline__end,
+  .v-field__outline__notch::before,
+  .v-field__outline__notch::after {
+    border-color: #d2d2d2 !important;
+  }
+}
+
+.rounded-large {
+  &.v-menu > .v-overlay__content {
+    border-radius: 30px !important;
+  }
+}
+
+.v-menu > .v-overlay__content {
+  box-shadow: 0 0 50px 0 #0000001a !important;
+
+  .v-card,
+  .v-menu > .v-overlay__content > .v-sheet,
+  .v-menu > .v-overlay__content > .v-list {
+    box-shadow: none !important;
+  }
+}
