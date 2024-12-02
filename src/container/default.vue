@@ -4,7 +4,7 @@
 
     <main>
       <router-view v-slot="{ Component }">
-        <div class="px-[80px]">
+        <div class="px-[80px] pb-10">
           <transition name="fade" mode="out-in">
             <component :is="Component" />
           </transition>

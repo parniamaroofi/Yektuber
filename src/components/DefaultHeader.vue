@@ -16,7 +16,9 @@
             class="duration-300 select-none"
             >{{ item.title }}</span
           >
-          <v-icon v-if="item.childern.length">mdi-chevron-down</v-icon>
+          <v-icon v-if="item.childern.length" class="duration-300"
+            >mdi-chevron-down</v-icon
+          >
 
           <!-- Menu -->
           <v-menu
